@@ -58,9 +58,11 @@ export default function Home() {
 
   return (
     <main className="container mx-auto min-h-screen">
-      <div className="my-10 md:my-24 px-3 md:px-8 flex flex-col gap-4 md:gap-10">
-        <TodoInput onSubmit={onSubmit} form={form} />
+      <div className="my-6 md:my-16 px-3 md:px-8 flex flex-col gap-6 md:gap-10">
         <TodoContainer currTodo={currTodo} handleDelete={handleDelete} />
+        <div className="mt-10">
+          <TodoInput onSubmit={onSubmit} form={form} />
+        </div>
       </div>
     </main>
   );
