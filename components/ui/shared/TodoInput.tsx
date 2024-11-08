@@ -2,7 +2,13 @@
 
 import { OnSubmit } from "@/app/types_Interfaces/types";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
 import { z } from "zod";
@@ -13,7 +19,7 @@ export const formSchema = z.object({
     .min(2, {
       message: "Todo must be at least 2 characters.",
     })
-    .max(20, {
+    .max(30, {
       message: "Todo must be at most 20 characters.",
     }),
   time: z
@@ -21,7 +27,7 @@ export const formSchema = z.object({
     .min(2, {
       message: "Time must be at least 2 characters.",
     })
-    .max(10, {
+    .max(20, {
       message: "Time must be at most 10 characters.",
     }),
 });
@@ -42,6 +48,7 @@ const TodoInput = ({ onSubmit, form }: OnSubmit) => {
                 <FormControl className=" w-full">
                   <Input placeholder="Type a todo" {...field} />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -53,6 +60,7 @@ const TodoInput = ({ onSubmit, form }: OnSubmit) => {
                 <FormControl className=" w-full">
                   <Input placeholder="Allocated time" {...field} />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
