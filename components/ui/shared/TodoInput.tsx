@@ -19,16 +19,16 @@ export const formSchema = z.object({
     .min(2, {
       message: "Todo must be at least 2 characters.",
     })
-    .max(30, {
-      message: "Todo must be at most 20 characters.",
+    .max(80, {
+      message: "Todo must be at most 80 characters.",
     }),
   time: z
     .string()
     .min(2, {
       message: "Time must be at least 2 characters.",
     })
-    .max(20, {
-      message: "Time must be at most 10 characters.",
+    .max(50, {
+      message: "Time must be at most 50 characters.",
     }),
 });
 
